@@ -1,6 +1,8 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { chatSession } from './config/ai-model';
 import { prompt } from './utils/prompt';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 @Injectable()
 export class AppService {
@@ -10,6 +12,7 @@ export class AppService {
 
   async genProsidic(sentence: string): Promise<string> {
     const fullPrompt = prompt(sentence);
+    console.log(process.env.GEMINI_API_KEY);
     const result = await chatSession.sendMessage(fullPrompt);
     const output = result.response.text();
     // Find the starting and ending braces of the JSON object
