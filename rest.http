@@ -4,5 +4,5 @@ POST http://localhost:3000/
 Content-Type: application/json
 
 {
-     "sentence": "الكتابة العروضية"
+     "sentence": "ذهب احمد للسوق"
 }

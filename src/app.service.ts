@@ -8,10 +8,11 @@ export class AppService {
     return 'Hello World!';
   }
 
-  async genProsidic(sentence: string): Promise<string> {
+  async genProsidic(sentence: string) {
     const fullPrompt = prompt(sentence);
     const result = await chatSession.sendMessage(fullPrompt);
     const output = result.response.text();
+    // console.log(output);
     const startIndex = output.indexOf('{');
     const endIndex = output.lastIndexOf('}') + 1;
 
