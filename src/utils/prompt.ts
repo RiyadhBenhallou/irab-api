@@ -15,6 +15,7 @@ If the input is valid Arabic text and can be grammatically analyzed:
 - Set success to true
 - Provide a detailed I'rab analysis for each word
 - Include the original word and its grammatical role/case
+- Don't analyze special characters and punctuation marks
 
 If the input is not valid Arabic text, set success to false with an error message:
 - If contains non-Arabic characters: "Input contains non-Arabic characters."
